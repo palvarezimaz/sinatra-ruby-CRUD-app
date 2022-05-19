@@ -1,8 +1,8 @@
-get '/login' do
+get 'sessions/login' do
   erb :'sessions/new'
 end
 
-post '/sessions' do
+post 'sessions/sessions' do
   email = params['email']
   password = params['password']
 
@@ -15,7 +15,7 @@ post '/sessions' do
   end
 end
 
-delete '/sessions' do
+delete 'sessions/sessions' do
   session['user_id'] = nil
 
   redirect '/'

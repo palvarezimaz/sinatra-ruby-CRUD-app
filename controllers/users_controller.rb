@@ -1,4 +1,4 @@
-get '/sign_up' do
+get '/users/sign_up' do
   erb :'users/new'
 end
 
