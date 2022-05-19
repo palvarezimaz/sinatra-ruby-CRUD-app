@@ -1,25 +1,25 @@
 get '/cryptos' do
-  btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
+  # btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
   ## check for concflicts here
   
   crypto_list = all_crypto()
 
   erb :'crypto/index', locals: {
     crypto_items: crypto_list,
-    btc_price: btc_price
+    # btc_price: btc_price
   }
 end
 
-get '/cryptos/btc_price' do
-  btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
-# binding.pry
-  redirect '/cryptos'
-  # # price = btc_price['bitcoin']['aud']
-  # erb :index, locals: {
-  #   btc_price: btc_price
-  #   # price: price
-  # }
-end
+# get '/cryptos/btc_price' do
+#   btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
+# # binding.pry
+#   redirect '/cryptos'
+#   # # price = btc_price['bitcoin']['aud']
+#   # erb :index, locals: {
+#   #   btc_price: btc_price
+#   #   # price: price
+#   # }
+# end
 
 ## check for conflicts
 get '/cryptos/list_all' do
