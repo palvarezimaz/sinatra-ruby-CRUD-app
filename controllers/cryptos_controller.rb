@@ -1,12 +1,12 @@
 get '/cryptos' do
-  # btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
-  ## check for concflicts here
+  btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
+  # check for concflicts here
   
   crypto_list = all_crypto()
 
   erb :'cryptos/index', locals: {
     crypto_list: crypto_list,
-    # btc_price: btc_price
+    btc_price: btc_price
   }
 end
 
