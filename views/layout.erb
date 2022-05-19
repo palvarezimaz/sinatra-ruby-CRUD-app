@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Dead cryptos Archive</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <script src="/javascripts/application.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -14,11 +15,11 @@
   </li>
   <li class="internav"> | </li> %>
   <li>
-    <a href="/cryptos/list_all">List all Cryptos</a>
+    <a href="/cryptos/list_all">Cryptos</a>
   </li>
   <li class="internav"> | </li>
   <li>
-    <a href="/cryptos/new">Contribute</a>  
+    <a href="/stories/index">Stories</a>  
   </li>
   <li class="internav"> | </li>
   <li>
@@ -51,7 +52,11 @@
     <a href="javascript:history.back();">Back</a>  
   </li>
   <li>
-    <a href="/">Logout</a>  
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete">
+
+      <button>Logout</button>
+    </form> 
   </li>
 </footer>
 </body>

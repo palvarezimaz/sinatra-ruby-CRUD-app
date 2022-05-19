@@ -6,8 +6,11 @@
 <% if logged_in? %>
   <h2>You are currently logged as: <%= current_user['name'] %></h2>
   <h2>You have now access as <%= current_user['user_role'] %></h2>
-
-  <h2>You can now view and add new Dead cryptos</h2>
+  <% if admin_login? %>
+    <h2>You can now view, add, edit and remove Dead cryptos</h2>
+  <% else %>
+    <h2>You can now view and add new Dead cryptos</h2>
+  <% end %>
 
   <h2>Remember to
 

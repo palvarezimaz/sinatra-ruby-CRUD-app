@@ -7,17 +7,18 @@
   <input type="text" name="name" placeholder="Enter your user name" required>
 
   <label for="">*Email: </label>
-  <input type="text" name="email" placeholder="Enter your email address" required>
+  <input type="email" name="text" placeholder="Enter your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
   <label for="">*Password: </label>
-  <input type="password" name="password" placeholder="Enter your password" required>
+  <input id ="pass" type="password" name="password" placeholder="Enter your password" required>
 
   <label for="">*Confirm Password: </label>
-  <input type="password" name="confirm_password" placeholder="Confirm your password" required>
+  <input id="confirm_pass" type="password" name="confirm_password" placeholder="Confirm your password" onkeyup="validate_password()" required>
+  <span id="wrong_pass_alert"></span>
 
 
-   <button>Create user</button>
-
+   <button id="create" class="">Create user</button>
+ 
 </form>
 
-
+<%# onclick="wrong_pass_alert()" %>
