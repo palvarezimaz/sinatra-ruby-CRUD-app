@@ -31,20 +31,22 @@ get '/cryptos/list_all' do
 end
 
 get '/cryptos/new' do
+
+
   erb :'cryptos/new'
 end
 
 post '/cryptos' do
-  crypto_name = params['name']
-  crypto_acronym = params['acronym']
-  crypto_logo_url = params['logo_url']
-  crypto_year_created = params['year_created']
-  crypto_year_ended = params['year_ended']
-  crypto_country = params['country']
-  crypto_project_type = params['project_type']
-  crypto_extra_info = params['extra_info']
+  name = params['name']
+  acronym = params['acronym']
+  logo_url = params['logo_url']
+  year_created = params['year_created']
+  year_ended = params['year_ended']
+  country = params['country']
+  project_type = params['project_type']
+  extra_info = params['extra_info']
 
-  create_crypto(crypto_name, crypto_acronym, crypto_logo_url, crypto_year_created, crypto_year_ended, crypto_country, crypto_project_type, crypto_extra_info)
+  create_crypto(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info)
 
   redirect '/cryptos'
 end
@@ -61,14 +63,14 @@ end
 
 put '/cryptos/:id' do
   id = params['id']
-  crypto_name = params['name']
-  crypto_acronym = params['acronym']
-  crypto_logo_url = params['logo_url']
-  crypto_year_created = params['year_created']
-  crypto_year_ended = params['year_ended']
-  crypto_country = params['country']
-  crypto_project_type = params['project_type']
-  crypto_extra_info = params['extra_info']
+  name = params['name']
+  acronym = params['acronym']
+  logo_url = params['logo_url']
+  year_created = params['year_created']
+  year_ended = params['year_ended']
+  country = params['country']
+  project_type = params['project_type']
+  extra_info = params['extra_info']
 
   update_crypto(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info, id)
 
