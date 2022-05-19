@@ -5,7 +5,8 @@ get '/cryptos' do
   crypto_list = all_crypto()
 
   erb :'crypto/index', locals: {
-    crypto_items: crypto_list
+    crypto_items: crypto_list,
+    btc_price: btc_price
   }
 end
 
