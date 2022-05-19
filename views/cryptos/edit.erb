@@ -1,8 +1,8 @@
 <h2>Edit Dead Crypto Project</h2>
 
-<form action="/update_crypto" method="POST">
+<form action="/update_crypto/<%= crypto['id'] %>" method="POST">
   <input type="hidden" name="_method" value="put">
-  <input type="hidden" name="id" value="<%= crypto['id']%>">
+  
 
   <label for="">Name: </label>
   <input type="text" name="name" value="<%= crypto['name'] %>">

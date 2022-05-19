@@ -11,11 +11,10 @@
   </article>
 
   <article class="article_buttons">
-    <a href="/cryptos/edit?id=<%= crypto['id'] %>" class="buttons">Edit this crypto</a>
+    <a href="/cryptos/<%= crypto['id'] %>/edit" class="buttons">Edit this crypto</a>
 
-    <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/delete_crypto" method="POST">
+    <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/delete_crypto/<%= <%= crypto['id'] %>" method="POST">
       <input type="hidden" name="_method" value="delete" >
-      <input type="hidden" name="id" value="<%= crypto['id'] %>">
       <button class="form-button">Delete project</button>
     </form>
   </article>

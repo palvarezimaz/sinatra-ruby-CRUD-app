@@ -48,7 +48,7 @@ post '/cryptos' do
 
   create_crypto(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info)
 
-  redirect '/cryptos'
+  redirect '/cryptos/list_all'
 end
 
 get '/cryptos/:id/edit' do
