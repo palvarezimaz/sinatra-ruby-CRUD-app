@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'sinatra_generator'
 gem 'pg'
 gem 'bcrypt'
 gem 'httparty'
+gem 'pry'
+gem 'rerun'
+gem 'puma'
