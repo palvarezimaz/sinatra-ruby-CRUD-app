@@ -5,7 +5,7 @@ require 'bcrypt'
 
 enable :sessions
 
-require './controllers/crypto_controller'
+require './controllers/cryptos_controller'
 require './controllers/users_controller'
 require './controllers/session_controller'
 
