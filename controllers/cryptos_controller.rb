@@ -1,4 +1,4 @@
-get '/' do
+get '/cryptos' do
   btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
   ## check for concflicts here
   
@@ -7,6 +7,17 @@ get '/' do
   erb :'crypto/index', locals: {
     crypto_items: crypto_list
   }
+end
+
+get '/cryptos/btc_price' do
+  btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
+# binding.pry
+  redirect '/cryptos'
+  # # price = btc_price['bitcoin']['aud']
+  # erb :index, locals: {
+  #   btc_price: btc_price
+  #   # price: price
+  # }
 end
 
 ## check for conflicts
@@ -18,11 +29,11 @@ get '/cryptos/list_all' do
   }
 end
 
-get '/crypto/new' do
+get '/cryptos/new' do
   erb :'crypto/new'
 end
 
-post '/crypto' do
+post '/cryptos' do
   crypto_name = params['name']
   crypto_acronym = params['acronym']
   crypto_logo_url = params['logo_url']
@@ -34,7 +45,7 @@ post '/crypto' do
 
   create_crypto(crypto_name, crypto_acronym, crypto_logo_url, crypto_year_created, crypto_year_ended, crypto_country, crypto_project_type, crypto_extra_info)
 
-  redirect '/'
+  redirect '/cryptos'
 end
 
 get '/cryptos/:id/edit' do
@@ -60,7 +71,7 @@ put '/cryptos/:id' do
 
   update_crypto(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info, id)
 
-  redirect '/'
+  redirect '/cryptos'
 end
 
 delete '/cryptos/:id' do
@@ -72,21 +83,21 @@ delete '/cryptos/:id' do
 end
 
 #UNDER WORK
-get '/cryptos/search_crypto' do
+# get '/cryptos/search_crypto' do
 
-  erb :cryptos/search_crypto
+#   erb :cryptos/search_crypto
 
-end
+# end
 
-get '/cryptos/one_crypto' do
-  name = params['name']
+# get '/cryptos/one_crypto' do
+#   name = params['name']
 
-  crypto = one_crypto()
+#   crypto = one_crypto()
 
-# binding.pry
-  erb :cryptos/one_crypto, locals: {
-    crypto: crypto
-  }
+# # binding.pry
+#   erb :cryptos/one_crypto, locals: {
+#     crypto: crypto
+#   }
 
-  redirect '/cryptos/one_crypto'
-end
+#   redirect '/cryptos/one_crypto'
+# end
