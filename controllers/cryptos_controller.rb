@@ -56,7 +56,7 @@ get '/cryptos/:id/edit' do
   
   crypto = edit_crypto(id)
 
-  erb :'crypto/edit', locals: {
+  erb :'cryptos/edit', locals: {
     crypto: crypto
   }
 end
