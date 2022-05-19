@@ -8,29 +8,28 @@
   <form action="/cryptos" method="POST">
   
     <label for="">Name: </label>
-    <input type="text" name="name">
+    <input type="text" name="name" required>
 
     <label for="">Acronym: </label>
-    <input type="text" name="acronym">
+    <input type="text" name="acronym" required>
 
     <label for="">Logo url: </label>
-    <input type="text" name="logo_url">
+    <input type="text" name="logo_url" required>
 
     <label for="">Year created: </label>
-    <input type="year" name="year_created">
+    <input type="number" name="year_created" required>
 
     <label for="">Year ended: </label>
-    <input type="year" name="year_ended">
+    <input type="number" name="year_ended" required>
 
     <label for="">Country: </label>
-    <input type="text" name="country">
+    <input type="text" name="country" required>
     
     <label for="">Project type: </label>
-    <input type="text" name="project type">
+    <input type="text" name="project_type" required>
 
     <label for="">About: </label>
-      <textarea name="extra_info" id="extra_info" cols="30" rows="10"></textarea>
-    <%# <input type="text" name="extra_info" > %>
+      <textarea name="extra_info" id="extra_info" cols="20" rows="10"></textarea>
 
     <p></p>
     <button class="form-button">Include this Dead Crypto into the Archives!</button>

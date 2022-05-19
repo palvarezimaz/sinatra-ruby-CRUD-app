@@ -5,28 +5,28 @@
   
 
   <label for="">Name: </label>
-  <input type="text" name="name" value="<%= crypto['name'] %>">
+  <input type="text" name="name" value="<%= crypto['name'] %>" required>
 
   <label for="">Acronym: </label>
-  <input type="text" name="acronym" value="<%= crypto['name'] %>">
+  <input type="text" name="acronym" value="<%= crypto['name'] %>" required>
 
    <label for="">Logo url: </label>
-  <input type="text" name="logo_url" value="<%= crypto['logo_url'] %>">
+  <input type="text" name="logo_url" value="<%= crypto['logo_url'] %>" required>
 
   <label for="">Year created: </label>
-  <input type="year" name="year_created" value="<%= crypto['year_created'] %>">
+  <input type="number" name="year_created" value="<%= crypto['year_created'] %>" required>
 
   <label for="">Year ended: </label>
-  <input type="year" name="year_ended" value="<%= crypto['year_ended'] %>">
+  <input type="number" name="year_ended" value="<%= crypto['year_ended'] %>" required>
 
    <label for="">Country: </label>
-  <input type="text" name="country" value="<%= crypto['country'] %>">
+  <input type="text" name="country" value="<%= crypto['country'] %>" required>
   
    <label for="">Project type: </label>
-  <input type="text" name="project type" value="<%= crypto['project_type'] %>">
+  <input type="text" name="project_type" value="<%= crypto['project_type'] %>" required>
 
    <label for="">About: </label>
-  <input type="text" name="extra_info" value="<%= crypto['extra_info'] %>">
+  <input type="text" name="extra_info" value="<%= crypto['extra_info'] %>" required>
 
   <button>Update this Dead Crypto</button>
 </form>
