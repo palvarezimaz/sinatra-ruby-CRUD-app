@@ -1,8 +1,8 @@
-get '/users/sign_up' do
+get '/sign_up' do
   erb :'users/new'
 end
 
-post '/users/create_user' do
+post '/create_user' do
   name = params['name']
   email = params['email']
   password = params['password']

@@ -4,7 +4,7 @@ get '/cryptos' do
   
   crypto_list = all_crypto()
 
-  erb :'crypto/index', locals: {
+  erb :'cryptos/index', locals: {
     crypto_items: crypto_list,
     # btc_price: btc_price
   }
@@ -31,7 +31,7 @@ get '/cryptos/list_all' do
 end
 
 get '/cryptos/new' do
-  erb :'crypto/new'
+  erb :'cryptos/new'
 end
 
 post '/cryptos' do
