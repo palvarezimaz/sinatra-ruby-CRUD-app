@@ -13,7 +13,7 @@
   <article class="article_buttons">
     <a href="/cryptos/<%= crypto['id'] %>/edit" class="buttons">Edit this crypto</a>
 
-    <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/delete_crypto/<%= <%= crypto['id'] %>" method="POST">
+    <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/delete_crypto/<%= crypto['id'] %>" method="POST">
       <input type="hidden" name="_method" value="delete" >
       <button class="form-button">Delete project</button>
     </form>
