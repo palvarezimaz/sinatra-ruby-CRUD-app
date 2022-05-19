@@ -1,22 +1,46 @@
 
 <h2>Welcome!</h2>
+<div class="line-divisor"></div>
 
-<h3>This little project aims to keep track of the most popular and failed crypto projects</h3>
 
+<% if logged_in? %>
+  <h2>You are currently logged as: <%= current_user['name'] %></h2>
+  <h2>You have now access as <%= current_user['user_role'] %></h2>
 
-<article class="tasks">
-<h4>Steps of the project</h4>
+  <h2>You can now view and add new Dead cryptos</h2>
 
-<li>Create the database and the wireframe - Practice CRUD setup</li>
-<li>Create a list all function, an add, edit and edit functionality - Practice CRUD setup</li>
-<li>Create a search in DB functionality - Practice CRUD and safe SQL practices</li>
-<li>List items with different criterias (name, oldest project, etc..)</li>
-<li>Integrate Coingecko API for realtime BTC price using httparty - Practice API integration</li>
-<li>Integrate geolocalization for dead projects - Practica API integration</li>
-<li>Add usernames with rights to edit and delete - No technical skills for this.. yet</li>
-<li>Add a pool for accepting new updates - No technical skills for this.. yet</li>
-</ul>
+  <h2>Remember to
 
-<h3>It was made purely for educational purpose, as Project 2 for the GA Software Engineer Immersive course, cohort #53</h3>
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete">
 
-</article>
+      <button>Logout</button>
+    </form>
+    when you are finished</h2>
+    <div class="line-divisor"></div>
+
+  <article class="tasks">
+    <h3>This little project aims to keep track of the most popular and failed crypto projects</h3>
+    <h4>Steps of the project:</h4>
+
+    <li>Create the database and the wireframe - Practice CRUD setup</li>
+    <li>Create a list all function, an add, edit and edit functionality - Practice CRUD setup</li>
+    <li>Create a search in DB functionality - Practice CRUD and safe SQL practices</li>
+    <li>List items with different criterias (name, oldest project, etc..)</li>
+    <li>Integrate Coingecko API for realtime BTC price using httparty - Practice API integration</li>
+    <li>Integrate geolocalization for dead projects - Practica API integration</li>
+    <li>Add usernames with rights to edit and delete - No technical skills for this.. yet</li>
+    <li>Add a pool for accepting new updates - No technical skills for this.. yet</li>
+    </ul>
+
+    <h3>It was made purely for educational purpose, as Project 2 for the GA Software Engineer Immersive course, cohort #53</h3>
+
+  </article>
+<% else %>
+  <h2>At the moment, you are our guest but you have no access to the project.</h2>
+
+  <h2>Please <a href="/sign_up">Sign up</a> or <a href="/login">Log in</a>.</h2>
+  <div class="line-divisor"></div>
+
+    <h3>It web app was purely made for educational purpose, as Project 2 for the GA Software Engineer Immersive course, cohort #53</h3>
+<% end %>

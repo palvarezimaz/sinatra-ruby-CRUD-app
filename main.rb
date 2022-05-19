@@ -18,5 +18,5 @@ require './models/user'
 require './db/db'
 
 get '/' do
-  erb :'cryptos/index'
+  redirect '/cryptos'
 end
