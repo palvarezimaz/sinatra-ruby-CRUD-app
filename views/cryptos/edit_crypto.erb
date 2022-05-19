@@ -1,0 +1,38 @@
+<h2>Edit Dead Crypto Project</h2>
+
+<form action="/update_crypto" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="id" value="<%= crypto['id']%>">
+
+  <label for="">Name: </label>
+  <input type="text" name="name" value="<%= crypto['name'] %>">
+
+  <label for="">Acronym: </label>
+  <input type="text" name="acronym" value="<%= crypto['name'] %>">
+
+   <label for="">Logo url: </label>
+  <input type="text" name="logo_url" value="<%= crypto['logo_url'] %>">
+
+  <label for="">Year created: </label>
+  <input type="year" name="year_created" value="<%= crypto['year_created'] %>">
+
+  <label for="">Year ended: </label>
+  <input type="year" name="year_ended" value="<%= crypto['year_ended'] %>">
+
+   <label for="">Country: </label>
+  <input type="text" name="country" value="<%= crypto['country'] %>">
+  
+   <label for="">Project type: </label>
+  <input type="text" name="project type" value="<%= crypto['project_type'] %>">
+
+   <label for="">About: </label>
+  <input type="text" name="extra_info" value="<%= crypto['extra_info'] %>">
+
+  <button>Update this Dead Crypto</button>
+</form>
+
+<div class="line-divisor"></div>
+
+<a href="/cryptos/list_all">Go back!</a>
+
+<a href="/">Home!</a>

@@ -1,0 +1,65 @@
+nav,
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  row-gap: 10px;
+}
+
+.internav {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+body {
+  /* display: grid;
+  justify-content: center; */
+  max-width: 600px;
+  background-color: lightgrey;
+  margin: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.crypto-logo {
+  max-width: 50px;
+}
+
+.line-divisor {
+  border-bottom: 2px solid black;
+  margin: 15px 0;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.article-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.article_buttons {
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+}
+
+.form-button {
+  all: unset;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+}

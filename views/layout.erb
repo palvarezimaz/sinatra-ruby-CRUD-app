@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Dead cryptos Archive</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<h1>The Dead Crypto Archives</h1>
+<nav><ul>
+  <%# <li>  
+    <a href="/search_crypto">Search a Crypto</a>
+  </li>
+  <li class="internav"> | </li> %>
+  <li>
+    <a href="/cryptos/list_all">List all Cryptos</a>
+  </li>
+  <li class="internav"> | </li>
+  <li>
+    <a href="/cryptos/new">Contribute</a>  
+  </li>
+  <li class="internav"> | </li>
+  <li>
+    <a href="/">Home</a>  
+  </li>
+   <li class="internav"> | </li>
+  <li>
+    <a href="javascript:history.back();">Back</a>  
+  </li>
+  
+</ul></nav>
+
+<div class="line-divisor"></div>
 
   <%= yield %>
 

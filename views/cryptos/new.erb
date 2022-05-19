@@ -1,0 +1,43 @@
+<h2>Add a Dead Crypto Project</h2>
+
+<h4>Note: half-dead projects are also accepted</h4>
+<div class="line-divisor"></div>
+
+<form action="/new_crypto" method="POST">
+ 
+  <label for="">Name: </label>
+  <input type="text" name="name">
+
+  <label for="">Acronym: </label>
+  <input type="text" name="acronym">
+
+   <label for="">Logo url: </label>
+  <input type="text" name="logo_url">
+
+  <label for="">Year created: </label>
+  <input type="year" name="year_created">
+
+  <label for="">Year ended: </label>
+  <input type="year" name="year_ended">
+
+   <label for="">Country: </label>
+  <input type="text" name="country">
+  
+   <label for="">Project type: </label>
+  <input type="text" name="project type">
+
+   <label for="">About: </label>
+    <textarea name="extra_info" id="extra_info" cols="30" rows="10"></textarea>
+  <%# <input type="text" name="extra_info" > %>
+
+  <p></p>
+  <button class="form-button">Include this Dead Crypto into the Archives!</button>
+</form>
+
+<div class="line-divisor"></div>
+
+<article class="article-button">
+<a href="/cryptos/list_all">Go back!</a>
+
+<a href="/">Home!</a>
+</article>
