@@ -2,7 +2,7 @@ get 'sessions/login' do
   erb :'sessions/new'
 end
 
-post 'sessions/sessions' do
+post '/sessions' do
   email = params['email']
   password = params['password']
 
@@ -15,7 +15,7 @@ post 'sessions/sessions' do
   end
 end
 
-delete 'sessions/sessions' do
+delete '/sessions' do
   session['user_id'] = nil
 
   redirect '/'

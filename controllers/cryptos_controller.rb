@@ -25,7 +25,7 @@ end
 get '/cryptos/list_all' do
   crypto_list = all_crypto()
 
-  erb :cryptos/list_all, locals: {
+  erb :'cryptos/list_all', locals: {
     crypto_list: crypto_list
   }
 end
