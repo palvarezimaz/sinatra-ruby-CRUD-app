@@ -1,5 +1,15 @@
 get '/login' do
-  erb :'sessions/new'
+  alert = params['alert']
+  
+  if alert == nil
+    erb :'sessions/new', locals: {
+      message: ""
+    }
+  else
+    erb :'sessions/new', locals: {
+      message: alert
+    }
+  end
 end
 
 post '/sessions' do
@@ -12,6 +22,8 @@ post '/sessions' do
     session['user_id'] = user['id']
     
     redirect '/'
+  else
+    redirect '/login?alert=Login unsuccessful, please try again'
   end
 end
 

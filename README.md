@@ -1,9 +1,28 @@
-# CRUD APP - Project 2 -
+# CRUD APP - Project 2 - The Dead Crypto Archives
 
 ## Summary
 
-This second project deploys an CRUD app via Heroku
-[To acces it, click here](https://young-eyrie-39795.herokuapp.com/)
+This second project deploys an full stack CRUD app via Heroku.
+[To acces it, click here](https://young-eyrie-39795.herokuapp.com/). The Dead Crypro Archives aims to be a repository of terminated, abandoned or failed Crypto-currency projects. I also has a space for users to share their stories related to these projects. With a early 2000's flair, it's strong on security and safety.
+
+### Key features
+
+- Secure login through password hashing (Bcrypt)
+- Parameterized database queries in PostgreSQL
+- Three levels of access: guest, user (by sign up registered) and admin (cold setup)
+- MVC design pater, clean and replicable.
+- Profanity filter.
+
+## Project description
+
+Cryptocurrencies have seen an exponential growth in the last few years, reaching market caps of billions and exciting many with promises of quick money and financial independence. However, many projects have failed and have taken with them the financial prosperity and security of those who trusted and deposited their hard earn money. The most recent example (May 2022) was the dramatic fall of Terra LUNA and the "stablecoin" USD, which offered an anual 20% rate with their Anchor protocol, sweeping billions of dollars in just one day.
+
+In lieu of this, it makes sense to gather these failing projects in an Archive, as well as giving the oportunity for investors and cryptocurrency users to share theirs stories, as a testimony of a these tumultuous events that will shape, for better or worse, the financial future of humanity.
+
+## User stories
+
+Jack X., a middle age tradie from inner New South Wales, got an exciting email: "Become millionare in only 2 months". He went to his daughter's shiny MacBook Pro and typed in Google: "OneCoin"... 6 million results, thousands of testimonies and photos filled with paradisiac beaches and Lamborghinis. Jack got excited, thinking: "No more sausage rolls for brunch!". He even put an ad for selling his truck. He was ready to invest all his self-managed super.
+In this lusftul, greedy frenesi, the algorithm took his side and showed him a site called "The Dead Crypto Archives", citing this OneCoin. Suddenly, Jacks pituitary gland activated.. he clicked, signed up, and discovered the scam. Not only he could read about the downfall of that Ponzi-scheme, but he also read about so many others that fell in the trap. Jack X. was happy that, beyond all those fake promises, there was still truthful information out there that would help him take better decisions regarding his financial future, and happy that there was a site in which he could write his story, the one you have just read.
 
 ## Plan
 
@@ -35,21 +54,23 @@ This second project deploys an CRUD app via Heroku
 
 ## Tech used
 
+- Heroku for deployment, using Sinatra as a web framework
+- Hashing algorithm: Bcrypt
+- Back End: Ruby and PostgreSQL
+- Front End: Javascript, CSS and HTML
+- APIs: Coingecko and Purgomalum.
+
+### Pending:
+
+User profile, access to their own messages and capacity to edit them or delete them.
+
 ### pages to revisit (so I can close them in Chrome)
 
 Important:
 Password check
 https://haveibeenpwned.com/API/v3
 
-API - images
-https://www.remove.bg/api#remove-background
-https://dagpi.xyz/
-https://imagga.com/
-https://www.cloudmersive.com/image-recognition-and-processing-api
-https://www.contentful.com/developers/docs/references/images-api/
-
 language
-https://www.purgomalum.com/
 https://dovetailapp.com/blog/sentiment-analysis/
 https://techwithsach.com/sentiment-analysis-using-google-cloud-natural-language-api/
 https://www.upbuild.io/blog/google-cloud-natural-language-api/

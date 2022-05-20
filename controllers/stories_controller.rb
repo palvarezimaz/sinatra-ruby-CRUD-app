@@ -22,8 +22,12 @@ post '/stories' do
   user_posting_name = current_user['name']
   crypto_id = params['crypto_id']
   story = params['story']
+  date_created = Time.now.ctime
 
-  create_story(user_posting_id, user_posting_name, crypto_id, story)
+  story_judged = exterminatus(story)
+  story_cleansed = story_judged["result"]
+# binding.pry
+  create_story(user_posting_id, user_posting_name, crypto_id, date_created, story_cleansed)
 # binding.pry
   redirect '/stories/index'
 end

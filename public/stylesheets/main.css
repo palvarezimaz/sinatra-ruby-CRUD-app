@@ -21,10 +21,6 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.crypto-logo {
-  max-width: 50px;
-}
-
 .line-divisor {
   border-bottom: 2px solid black;
   margin: 15px 0;

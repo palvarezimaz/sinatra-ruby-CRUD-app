@@ -1,3 +1,5 @@
+require 'pry'
+
 get '/cryptos' do
   btc_price = btc_price()
   kanye_west = kanye_west()
@@ -14,7 +16,7 @@ end
 ## TO DELETE WHEN OVER
 # get '/cryptos/btc_price' do
 #   btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
-# # binding.pry
+# # 
 #   redirect '/cryptos'
 #   # # price = btc_price['bitcoin']['aud']
 #   # erb :index, locals: {
@@ -25,9 +27,16 @@ end
 
 get '/cryptos/list_all' do
   crypto_list = all_crypto()
+  # acronyms_raw = all_acronyms()
+  # acronyms_array = acronyms_raw.to_a
+
+  # binding.pry
+
+  # crypto_price = crypto_price(acronym)
 
   erb :'cryptos/list_all', locals: {
-    crypto_list: crypto_list
+    crypto_list: crypto_list,
+    # crypto_price = crypto_price
   }
 end
 
@@ -39,14 +48,13 @@ end
 post '/cryptos' do
   name = params['name']
   acronym = params['acronym']
-  logo_url = params['logo_url']
   year_created = params['year_created']
   year_ended = params['year_ended']
   country = params['country']
   project_type = params['project_type']
   extra_info = params['extra_info']
 
-  create_crypto(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info)
+  create_crypto(name, acronym, year_created, year_ended, country, project_type, extra_info)
 
   redirect '/cryptos/list_all'
 end
@@ -65,14 +73,13 @@ put '/cryptos/:id' do
   id = params['id']
   name = params['name']
   acronym = params['acronym']
-  logo_url = params['logo_url']
   year_created = params['year_created']
   year_ended = params['year_ended']
   country = params['country']
   project_type = params['project_type']
   extra_info = params['extra_info']
 
-  update_crypto(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info, id)
+  update_crypto(name, acronym, year_created, year_ended, country, project_type, extra_info, id)
 
   redirect '/cryptos/list_all'
 end
