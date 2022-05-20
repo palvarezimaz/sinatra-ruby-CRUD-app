@@ -1,10 +1,16 @@
+require 'pry'
+
 get '/stories/index' do
   stories_list = all_stories()
   crypto_list = all_crypto()
+  # user_id = 
+  # name_user_posting = story_user_name()
 
   erb :'stories/index', locals: {
     stories_list: stories_list,
     crypto_list: crypto_list
+    # ,
+    # name_user_posting: name_user_posting
   }
 
 end
@@ -17,11 +23,12 @@ end
 
 post '/stories' do
   user_posting_id = current_user['id']
+  user_posting_name = current_user['name']
   crypto_id = params['crypto_id']
   story = params['story']
 
-  create_story(user_posting_id, crypto_id, story)
-
+  create_story(user_posting_id, user_posting_name, crypto_id, story)
+# binding.pry
   redirect '/stories/index'
 end
 
