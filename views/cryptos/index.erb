@@ -1,7 +1,9 @@
 
-<h2>Welcome!</h2>
-<div class="line-divisor"></div>
 
+
+<h2>Welcome!</h2>
+
+<div class="line-divisor"></div>
 
 <% if logged_in? %>
   <h2>You are currently logged as: <%= current_user['name'] %></h2>
@@ -14,13 +16,13 @@
 
   <h2>Remember to
 
-    <form action="/sessions" method="POST">
-      <input type="hidden" name="_method" value="delete">
+  <form action="/sessions" method="POST">
+    <input type="hidden" name="_method" value="delete">
 
-      <button>Logout</button>
-    </form>
-    when you are finished</h2>
-    <div class="line-divisor"></div>
+    <button>Logout</button>
+  </form>
+  when you are finished</h2>
+  <div class="line-divisor"></div>
 
   <article class="tasks">
     <h3>This little project aims to keep track of the most popular and failed crypto projects</h3>

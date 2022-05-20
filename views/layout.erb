@@ -4,67 +4,38 @@
   <meta charset="UTF-8">
   <title>Dead cryptos Archive</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/javascripts/application.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-<h1>The Dead Crypto Archives</h1>
-<nav><ul>
-  <%# <li>  
-    <a href="/search_crypto">Search a Crypto</a>
-  </li>
-  <li class="internav"> | </li> %>
-  <li>
-    <a href="/cryptos/list_all">Cryptos</a>
-  </li>
-  <li class="internav"> | </li>
-  <li>
-    <a href="/stories/index">Stories</a>  
-  </li>
-  <li class="internav"> | </li>
-  <li>
-    <a href="/">Home</a>  
-  </li>
-   <li class="internav"> | </li>
-  <li> <% if logged_in?%>
+<h1 class="main-title">The Dead Crypto Archives</h1>
+<div class="topnav" id="myTopnav">
+  <a href="/" class="active">Home</a>
+  <a href="/cryptos/list_all">Cryptos</a>
+  <a href="/stories/index">Stories</a>
+
+  <% if logged_in? %>
     <form action="/sessions" method="POST">
       <input type="hidden" name="_method" value="delete">
-
       <button>Logout</button>
-    </form> 
-    <% else %>
-      <a href="/login">Log in</a>
-    <% end %>  
-  </li>
-   <li class="internav"> | </li>
-  <li>
-    <a href="/sign_up">Sign up</a>  
-  </li>
-  
-</ul></nav>
+    </form>
 
-<div class="line-divisor"></div>
+  <% else %>
+
+    <a href="/login">Log in</a>
+  <% end %>  
+
+  <a href="/sign_up">Sign up</a>
+  <a href="/">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+</div>
+
+
 
   <%= yield %>
 
-<footer>
-<li>
-    <a href="/">About</a>  
-  </li>
- <li>
-    <a href="/">Home</a>  
-  </li>
-   <li class="internav"> | </li>
-  <li>
-    <a href="javascript:history.back();">Back</a>  
-  </li>
-  <li>
-    <form action="/sessions" method="POST">
-      <input type="hidden" name="_method" value="delete">
-
-      <button>Logout</button>
-    </form> 
-  </li>
-</footer>
 </body>
 </html>

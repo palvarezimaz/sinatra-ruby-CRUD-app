@@ -3,7 +3,7 @@
 ## Summary
 
 This second project deploys an full stack CRUD app via Heroku.
-[To acces it, click here](https://young-eyrie-39795.herokuapp.com/). The Dead Crypro Archives aims to be a repository of terminated, abandoned or failed Crypto-currency projects. I also has a space for users to share their stories related to these projects. With a early 2000's flair, it's strong on security and safety.
+[To acces it, click here](https://deadcryptos.herokuapp.com/). The Dead Crypro Archives aims to be a repository of terminated, abandoned or failed Crypto-currency projects. I also has a space for users to share their stories related to these projects. With a early 2000's flair, it's strong on security and safety.
 
 ### Key features
 
@@ -42,6 +42,9 @@ In this lusftul, greedy frenesi, the algorithm took his side and showed him a si
    iii. The admin
 
 2. Start with the pages flow logic
+   i. Crypto pages dynamics
+   ii. Users dynamics
+   iii. Stories dynamics
 
 ### Step 3 - Make it better
 
