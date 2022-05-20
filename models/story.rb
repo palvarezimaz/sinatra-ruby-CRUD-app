@@ -18,10 +18,4 @@ def update_story(crypto_id, story, id)
   cryptonite("UPDATE stories SET crypto_id = $1, story = $2 WHERE id = $3", [crypto_id, story, id])
 end
 
-# def story_user_name(user_posting_id)
-# cryptonite("SELECT name FROM users WHERE id = (SELECT user_posting_id FROM stories WHERE id = $1 ", [user_posting_id])
-
-  # cryptonite("SELECT name FROM users WHERE id = $1", [user_posting_id])[0]
-# end
-
 

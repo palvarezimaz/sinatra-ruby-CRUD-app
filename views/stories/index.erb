@@ -9,17 +9,10 @@
   <% stories_list.each do |story| %>
     <article class="article-header">
 
-      <h4>
-      
-      <%# <%= name_user_posting %> 
-      
-      <%= story['user_posting_name'] %>
-
-      says about <%= story['crypto_id'] %> crypto</h4>
+      <h4><%= story['user_posting_name'] %> on crypto <%= story['crypto_id'] %>:</h4>
     </article>
 
     <article class="article_body">
-      <p>Story:</p>
       <p><%= story['story'] %></p>
     </article>
   

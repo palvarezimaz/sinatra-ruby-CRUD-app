@@ -3,14 +3,10 @@ require 'pry'
 get '/stories/index' do
   stories_list = all_stories()
   crypto_list = all_crypto()
-  # user_id = 
-  # name_user_posting = story_user_name()
 
   erb :'stories/index', locals: {
     stories_list: stories_list,
     crypto_list: crypto_list
-    # ,
-    # name_user_posting: name_user_posting
   }
 
 end
