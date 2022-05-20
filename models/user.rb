@@ -2,7 +2,7 @@
 def create_user(name, email, password, user_role)
   password_digest = BCrypt::Password.create(password)
 
-  cryptonite("INSERT INTO users(name, email, password_digest, user_role) VALUES($1, $2, $3, $4)", [name, email, password_digest, user_role])
+  cryptonite("INSERT INTO users(name, email, password_digest, user_role) VALUES($1, $2, $3, $4) RETURNING *", [name, email, password_digest, user_role]).to_a[0]
 end
 
 def find_user_by_email(email)

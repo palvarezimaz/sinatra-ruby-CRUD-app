@@ -33,10 +33,10 @@ post '/users/create_user' do
    elsif find_user_by_email(email).to_a.count > 0
     redirect '/sign_up?alert=Ups, your email has been taken already! Please click in -Sign up!- and start again.'
   else
-    create_user(name, email, password, user_role) 
-    # redirect '/sign_up?alert=Congratulations. Your account has been created. You can now access our content as a user'
-    # redirect '/cryptos'
-    # redirect '/sessions?email=email&password=password' ## The problem is that I get a GET requests and sessions is a POST request
-    redirect '/login'
+    user = create_user(name, email, password, user_role) 
+    
+    session['user_id'] = user['id']
+    
+    redirect '/'
   end
 end

@@ -1,0 +1,25 @@
+<% if logged_in? %>
+
+  <h2>Hello <%= current_user['name'] %>, add your story!</h2>
+
+  <div class="line-divisor"></div>
+
+  <form action="/stories" method="POST">
+  
+    <label for="">Crypto acronym: </label>
+    <input type="text" name="story_acronym" required>
+
+    <label for="">Your story: </label>
+      <textarea name="user_story" id="extra_info" cols="20" rows="10"></textarea>
+
+    <p></p>
+    <button class="form-button">Include this Story into the Archives!</button>
+  </form>
+
+  <div class="line-divisor"></div>
+
+<% else %>
+
+    <% redirect '/' %>
+    
+  <% end %>

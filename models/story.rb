@@ -2,9 +2,9 @@ def all_stories
     cryptonite("SELECT * FROM stories ORDER BY story")
   end
 
-# def create_story(name, , logo_url, year_created, year_ended, country, project_type, extra_info)
-#   cryptonite("INSERT INTO stories(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info) VALUES($1, $2, $3, $4, $5, $6, $7, $8)", [name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info])
-# end
+def create_story(current_user_id, story_acronym, user_story)
+  cryptonite("INSERT INTO stories(current_user_id, story_acronym, user_story) VALUES($1, $2, $3)", [current_user_id, story_acronym, user_story])
+end
 
 # def delete_crypto(id)
 #   cryptonite("DELETE FROM cryptos WHERE id = $1", [id])
