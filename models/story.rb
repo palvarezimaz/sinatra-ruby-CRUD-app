@@ -1,3 +1,7 @@
+def all_stories
+    cryptonite("SELECT * FROM stories ORDER BY story")
+  end
+
 # def create_story(name, , logo_url, year_created, year_ended, country, project_type, extra_info)
 #   cryptonite("INSERT INTO stories(name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info) VALUES($1, $2, $3, $4, $5, $6, $7, $8)", [name, acronym, logo_url, year_created, year_ended, country, project_type, extra_info])
 # end
@@ -14,6 +18,3 @@
 #   cryptonite("SELECT * FROM cryptos WHERE id = $1", [id])[0]
 # end
 
-# def all_crypto
-#   cryptonite("SELECT * FROM cryptos ORDER BY name")
-# end

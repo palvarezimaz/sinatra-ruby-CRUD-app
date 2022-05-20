@@ -15,12 +15,10 @@ get '/sign_up' do
     erb :'users/new', locals: {
       message: alert
     } 
-    # redirect '/sign_up'
   elsif alert.include?("Congratulations")
     erb :'users/new', locals: {
       message: alert
     }
-    # redirect '/sign_up'
   end
 end
 
@@ -36,6 +34,9 @@ post '/users/create_user' do
     redirect '/sign_up?alert=Ups, your email has been taken already! Please click in -Sign up!- and start again.'
   else
     create_user(name, email, password, user_role) 
-    redirect '/sign_up?alert=Congratulations. Your account has been created. You can now access our content as a user'
+    # redirect '/sign_up?alert=Congratulations. Your account has been created. You can now access our content as a user'
+    # redirect '/cryptos'
+    # redirect '/sessions?email=email&password=password' ## The problem is that I get a GET requests and sessions is a POST request
+    redirect '/login'
   end
 end

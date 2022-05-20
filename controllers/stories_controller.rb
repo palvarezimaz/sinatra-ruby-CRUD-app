@@ -1,3 +1,8 @@
 get '/stories/index' do
-  erb :'stories/index'
+  stories_list = all_stories()
+
+  erb :'stories/index', locals: {
+    stories_list: stories_list
+  }
+
 end

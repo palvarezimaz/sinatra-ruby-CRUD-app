@@ -21,3 +21,11 @@ end
 def one_crypto
   cryptonite("SELECT * FROM cryptos WHERE name ILIKE $1", [name]);
 end
+
+def btc_price
+  HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
+end
+
+def kanye_west
+  HTTParty.get("https://api.kanye.rest/")
+end
