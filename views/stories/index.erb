@@ -4,30 +4,34 @@
     <div id="text">Welcome to our Dead Crypto story section. In view of the recent Terra LUNA and USD crash, the Dead Crypto Archives joins a worldwide campaing to promote mental health. We believe that sharing is an important part of this fight and we invite you to share your story. The cryptocurrency you are refering to must be included in our database.
     </div>
   </div>
+  <a href="/stories/new">Click here to make your contribution!</a>
 
   <% stories_list.each do |story| %>
     <article class="article-header">
-      <h3>Poster and crypto</h3>
+      <h4><%= story['user_posting_id'] %> says about <%= story['crypto_id'] %> crypto</h4>
     </article>
 
+    <article class="article_body">
+      <p>Story:</p>
+      <p><%= story['story'] %></p>
+    </article>
+  
     <% if admin_login? %>
+      <div class="line-divisor"></div>
       <article class="article_buttons">
         <a href="/stories/<%= story['id'] %>/edit" class="buttons">Edit this story</a>
 
-        <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/delete_story/<%= story['id'] %>" method="POST">
+        <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/stories/<%= story['id'] %>" method="POST">
           <input type="hidden" name="_method" value="delete" >
           <button class="form-button">Delete story</button>
         </form>
+        <div class="line-divisor"></div>
       </article>
     <% end %>
-  
-
-  <article class="article_body">
-    <p>Story:</p>
-    <p><%= story['story'] %></p>
-  </article>
   <% end %>
 
+  <div class="line-divisor"></div>
+
 <% else %>
-  <h3>Welcome to our Dead Crypto story section. To view the stories, please Sign up or log in.</h3>
+  <h3>Welcome to our Dead Crypto story section. To view the stories, please <a href="/sign_up">Sign up</a> or <a href="/login">Log in</a>.</h3>
 <% end %>

@@ -9,12 +9,46 @@ get '/stories/index' do
 
 end
 
+get '/stories/new' do
+
+  erb :'stories/new'
+
+end
+
 post '/stories' do
-  current_user_id = current_user['id']
-  story_acronym = params['story_acronym']
-  user_story = params['user_story']
+  user_posting_id = current_user['id']
+  crypto_id = params['crypto_id']
+  story = params['story']
 
-  create_story(current_user_id, story_acronym, user_story)
+  create_story(user_posting_id, crypto_id, story)
 
-  redirect '/stories'
+  redirect '/stories/index'
+end
+
+get '/stories/:id/edit' do
+  id = params['id']
+  
+  story = edit_stories(id)
+
+  erb :'stories/edit', locals: {
+    story: story
+  }
+end
+
+put '/stories/:id' do
+  crypto_id = params['crypto_id']
+  story = params['story']
+  id = params['id']
+
+  update_story(crypto_id, story, id)
+
+  redirect '/stories/index'
+end
+
+delete '/stories/:id' do
+  id = params['id']
+
+  delete_story(id)
+
+  redirect '/stories/index'
 end

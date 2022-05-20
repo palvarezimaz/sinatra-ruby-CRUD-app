@@ -1,6 +1,5 @@
 get '/cryptos' do
   btc_price = btc_price()
-  # check for concflicts here
   kanye_west = kanye_west()
   
   crypto_list = all_crypto()
@@ -12,6 +11,7 @@ get '/cryptos' do
   }
 end
 
+## TO DELETE WHEN OVER
 # get '/cryptos/btc_price' do
 #   btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
 # # binding.pry
@@ -23,7 +23,6 @@ end
 #   # }
 # end
 
-## check for conflicts
 get '/cryptos/list_all' do
   crypto_list = all_crypto()
 
@@ -33,7 +32,6 @@ get '/cryptos/list_all' do
 end
 
 get '/cryptos/new' do
-
 
   erb :'cryptos/new'
 end
