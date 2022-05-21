@@ -3,6 +3,7 @@ body {
   max-width: 650px;
   background-color: lightgrey;
   font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
 }
 
 h1.main-title {
@@ -15,6 +16,14 @@ h1.main-title {
   max-width: 650px;
 }
 
+#last-line {
+  padding-bottom: 80px;
+}
+
+#index-welcome {
+  text-align: center;
+}
+
 button {
   display: flex;
   flex-direction: row;
@@ -25,10 +34,20 @@ button {
   cursor: pointer;
 }
 
-/* button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-} */
+#edit-button {
+  font-weight: bold;
+}
+
+button:hover {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+#welcome-button {
+  display: flex;
+  justify-content: center;
+}
 
 form {
   display: inline-flex;
@@ -38,40 +57,50 @@ form {
   width: fit-content;
 }
 
+.form-data {
+  width: 300px;
+  margin-left: 50px;
+}
+
+.form-title {
+  margin-left: 50px;
+}
+
 .form-button {
   display: inline;
   margin: 5px;
   padding: 2px;
   width: fit-content;
-}
-
-/*
-.article-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.article_buttons {
-  display: flex;
-  flex-direction: row;
-  row-gap: 10px;
-}
-
-.form-button {
-  all: unset;
-  margin-left: 10px;
+  font-weight: bold;
   cursor: pointer;
 }
-*/
+
+#welcome-button {
+  text-align: center;
+}
+
 a {
   all: unset;
   cursor: pointer;
 }
-/*
-.tasks {
-  display: flex;
-  flex-direction: column;
-} */
+
+/* Links and buttons glow */
+a:hover {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #395047,
+      0 0 40px #395047, 0 0 50px #395047, 0 0 60px #395047, 0 0 70px #395047;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #416658, 0 0 40px #416658,
+      0 0 50px #416658, 0 0 60px #416658, 0 0 70px #416658, 0 0 80px #416658;
+  }
+}
 
 /*  password confirmation validation*/
 .pass {
@@ -113,18 +142,24 @@ a {
   cursor: pointer;
 }
 
+.overlay-link:hover {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
 #overlay {
-  position: fixed; /* Sit on top of the page content */
+  position: fixed;
   display: none;
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  cursor: pointer;
 }
 #text {
   position: absolute;
@@ -157,14 +192,12 @@ a {
   background-color: #ddd;
   color: black;
 }
-/* Navigation bar */
-/* Style the navbar */
+
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
 
-/* Navbar links */
 .topnav a {
   float: left;
   display: block;
@@ -175,27 +208,19 @@ a {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Add an active class to highlight the current page */
 .topnav a.active {
   background-color: #395047;
   color: white;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
 }
-
-/* Page content */
-/* .content {
-  padding: 16px;
-} */
 
 .sticky {
   position: fixed;
@@ -204,11 +229,14 @@ a {
 }
 
 .sticky + .content {
-  padding-top: 200px;
+  padding-top: 60px;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
+  body {
+    margin: 5px;
+    padding: 5px;
+  }
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -216,10 +244,6 @@ a {
     float: right;
     display: block;
   }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
   .topnav.responsive {
     position: relative;
   }

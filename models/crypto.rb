@@ -30,10 +30,6 @@ def btc_price
   HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
 end
 
-# def crypto_price(acronym)
-#   HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=#{acronym}&vs_currencies=aud")
-# end
-
 def kanye_west
   HTTParty.get("https://api.kanye.rest/")
 end

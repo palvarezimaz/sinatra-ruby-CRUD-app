@@ -1,5 +1,3 @@
-require 'pry'
-
 get '/stories/index' do
   stories_list = all_stories()
   crypto_list = all_crypto()
@@ -8,13 +6,11 @@ get '/stories/index' do
     stories_list: stories_list,
     crypto_list: crypto_list
   }
-
 end
 
 get '/stories/new' do
 
   erb :'stories/new'
-
 end
 
 post '/stories' do
@@ -26,9 +22,9 @@ post '/stories' do
 
   story_judged = exterminatus(story)
   story_cleansed = story_judged["result"]
-# binding.pry
+
   create_story(user_posting_id, user_posting_name, crypto_id, date_created, story_cleansed)
-# binding.pry
+
   redirect '/stories/index'
 end
 

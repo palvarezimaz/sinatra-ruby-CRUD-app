@@ -1,5 +1,3 @@
-require 'pry'
-
 get '/cryptos' do
   btc_price = btc_price()
   kanye_west = kanye_west()
@@ -13,30 +11,11 @@ get '/cryptos' do
   }
 end
 
-## TO DELETE WHEN OVER
-# get '/cryptos/btc_price' do
-#   btc_price = HTTParty.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=aud")
-# # 
-#   redirect '/cryptos'
-#   # # price = btc_price['bitcoin']['aud']
-#   # erb :index, locals: {
-#   #   btc_price: btc_price
-#   #   # price: price
-#   # }
-# end
-
 get '/cryptos/list_all' do
   crypto_list = all_crypto()
-  # acronyms_raw = all_acronyms()
-  # acronyms_array = acronyms_raw.to_a
-
-  # binding.pry
-
-  # crypto_price = crypto_price(acronym)
 
   erb :'cryptos/list_all', locals: {
     crypto_list: crypto_list,
-    # crypto_price = crypto_price
   }
 end
 
@@ -89,25 +68,5 @@ delete '/cryptos/:id' do
 
   delete_crypto(id)
 
-  redirect '/'
+  redirect '/cryptos/list_all'
 end
-
-#UNDER WORK
-# get '/cryptos/search_crypto' do
-
-#   erb :cryptos/search_crypto
-
-# end
-
-# get '/cryptos/one_crypto' do
-#   name = params['name']
-
-#   crypto = one_crypto()
-
-# # binding.pry
-#   erb :cryptos/one_crypto, locals: {
-#     crypto: crypto
-#   }
-
-#   redirect '/cryptos/one_crypto'
-# end

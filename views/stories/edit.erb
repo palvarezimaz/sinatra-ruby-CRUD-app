@@ -1,9 +1,9 @@
-<h2>Edit this story</h2>
+<h2 class="form-title">Edit this story</h2>
 
-<form action="/stories/<%= story['id'] %>" method="POST">
+<form class="form-data" action="/stories/<%= story['id'] %>" method="POST">
   <input type="hidden" name="_method" value="put">
 
-  <h4> for="">Poster: <%= story['id'] %></h4>
+  <h4>Poster: <%= story['id'] %></h4>
 
   <label for="">Cypto acronym: </label>
   <input type="text" name="crypto_id" value="<%= story['crypto_id'] %>" required>
@@ -11,7 +11,7 @@
   <label for="">The story: </label>
   <input type="text" name="story" value="<%= story['story'] %>" required>
 
-  <button>Update this story!</button>
+  <button class="form-button">Update this story!</button>
 </form>
 
 <div class="line-divisor"></div>

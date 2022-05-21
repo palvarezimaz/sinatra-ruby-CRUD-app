@@ -1,6 +1,6 @@
-<h2>Edit Dead Crypto Project</h2>
+<h2 class="form-title">Edit Dead Crypto Project</h2>
 
-<form action="/cryptos/<%= crypto['id'] %>" method="POST">
+<form class="form-data" action="/cryptos/<%= crypto['id'] %>" method="POST">
   <input type="hidden" name="_method" value="put">
   
 
@@ -16,16 +16,16 @@
   <label for="">Year ended: </label>
   <input type="number" name="year_ended" value="<%= crypto['year_ended'] %>" required>
 
-   <label for="">Country: </label>
+  <label for="">Country: </label>
   <input type="text" name="country" value="<%= crypto['country'] %>" required>
   
-   <label for="">Project type: </label>
+  <label for="">Project type: </label>
   <input type="text" name="project_type" value="<%= crypto['project_type'] %>" required>
 
-   <label for="">About: </label>
+  <label for="">About: </label>
   <input type="text" name="extra_info" value="<%= crypto['extra_info'] %>" required>
 
-  <button>Update this Dead Crypto</button>
+  <button class="form-button">Update this Dead Crypto</button>
 </form>
 
 <div class="line-divisor"></div>

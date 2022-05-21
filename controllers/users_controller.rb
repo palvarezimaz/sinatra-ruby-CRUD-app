@@ -1,5 +1,3 @@
-require 'pry'
-
 get '/sign_up' do
   alert = params['alert']
 
@@ -28,9 +26,9 @@ post '/users/create_user' do
   password = params['password']
   user_role = "user"
   
-   if find_user_by_name(name).to_a.count > 0
+  if find_user_by_name(name).to_a.count > 0
     redirect '/sign_up?alert=Ups, it seems that your username is already registered! Please click in -Sign up!- and start again.'
-   elsif find_user_by_email(email).to_a.count > 0
+  elsif find_user_by_email(email).to_a.count > 0
     redirect '/sign_up?alert=Ups, your email has been taken already! Please click in -Sign up!- and start again.'
   else
     user = create_user(name, email, password, user_role) 

@@ -1,59 +1,42 @@
-
-
-
-<h2>Welcome!</h2>
+<h2 id="index-welcome">Welcome!</h2>
 
 <div class="line-divisor"></div>
 
 <% if logged_in? %>
-  <h2>You are currently logged as: <%= current_user['name'] %></h2>
-  <h2>You have now access as <%= current_user['user_role'] %></h2>
+  <h2><%= current_user['name'] %>, you are currently logged as "<%= current_user['user_role'] %>."</h2>
   <% if admin_login? %>
-    <h2>You can now view, add, edit and remove Dead cryptos</h2>
+    <h2>You can now view, add, edit and remove Dead Cryptos and Stories into the archives.</h2>
   <% else %>
-    <h2>You can now view and add new Dead cryptos</h2>
+    <h2>You can now view and add new Dead Cryptos and Stories into the Archives.</h2>
   <% end %>
 
-  <h2>Remember to
+  <h2>Remember to <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form> when you're finished.</h2>
 
-  <form action="/sessions" method="POST">
-    <input type="hidden" name="_method" value="delete">
-
-    <button>Logout</button>
-  </form>
-  when you are finished</h2>
   <div class="line-divisor"></div>
 
-  <article class="tasks">
+  <article>
     <h3>This little project aims to keep track of the most popular and failed crypto projects</h3>
-    <h4>Steps of the project:</h4>
 
-    <li>Create the database and the wireframe - Practice CRUD setup</li>
-    <li>Create a list all function, an add, edit and edit functionality - Practice CRUD setup</li>
-    <li>Create a search in DB functionality - Practice CRUD and safe SQL practices</li>
-    <li>List items with different criterias (name, oldest project, etc..)</li>
-    <li>Integrate Coingecko API for realtime BTC price using httparty - Practice API integration</li>
-    <li>Integrate geolocalization for dead projects - Practica API integration</li>
-    <li>Add usernames with rights to edit and delete - No technical skills for this.. yet</li>
-    <li>Add a pool for accepting new updates - No technical skills for this.. yet</li>
-    </ul>
+    <h4>See the about section for more information.</h4>
 
-    <h3>It was made purely for educational purpose, as Project 2 for the GA Software Engineer Immersive course, cohort #53</h3>
-
+    <h3>This web app was made purely for educational purpose, as Project 2 for the GA Software Engineer Immersive course, cohort #53</h3>
   </article>
 <% else %>
-  <h2>At the moment, you are our guest but you have no access to the project.</h2>
+  <h2 id="index-welcome">At the moment, you are our welcomed guest, but you have no access to the project.</h2>
 
-  <h2>Please <a href="/sign_up">Sign up</a> or <a href="/login">Log in</a>.</h2>
+  <h2 id="index-welcome">Please <a href="/sign_up">sign up</a> or <a href="/login">log in</a>.</h2>
   <div class="line-divisor"></div>
-  <h3>You can still check the current BTC price: <%= btc_price['bitcoin']['aud'] %> AUD</h3>
+  <h3>In the meantime, know the current BTC price: <%= btc_price['bitcoin']['aud'] %> AUD.</h3> 
+    
+  <form action="javascript:history.go(0)">
+    <button class="form-button" id="welcome-button">(Click here to update it)</button>
+  </form>
   
-    <form action="javascript:history.go(0)">
-      <button class="form-button">Update</button>
-    </form>
-  
-    <h3>And here is your daily dose of Kanye West's wisdom:</h3>
-    <h4>"<%= kanye_west['quote'] %>"</h4>
-
-    <h3>It web app was purely made for educational purpose, as Project 2 for the GA Software Engineer Immersive course, cohort #53</h3>
+  <div class="line-divisor"></div>
+  <h3>And here is your daily dose of Kanye West's wisdom:</h3>
+  <h4>"<%= kanye_west['quote'] %>"</h4>
+    
 <% end %>

@@ -1,10 +1,10 @@
 <% if logged_in? %>
 
-  <h2>Hello <%= current_user['name'] %>, add your story!</h2>
+  <h2 class="form-title">Hello <%= current_user['name'] %>, add your story!</h2>
 
   <div class="line-divisor"></div>
 
-  <form action="/stories" method="POST">
+  <form class="form-data" action="/stories" method="POST">
   
     <label for="">Crypto acronym: </label>
     <input type="text" name="crypto_id" required>
@@ -20,6 +20,6 @@
 
 <% else %>
 
-    <% redirect '/' %>
+  <% redirect '/' %>
     
-  <% end %>
+<% end %>

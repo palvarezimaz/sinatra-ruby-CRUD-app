@@ -1,4 +1,3 @@
-
 <% if logged_in? %>
 
   <h2>List of all the Dead Cypto Projects</h2> 
@@ -8,30 +7,26 @@
   <div class="line-divisor"></div>
 
   <% crypto_list.each do |crypto| %>
-    <article class="article-header">
-      <h3><%= crypto['name'] %> - <%= crypto['acronym']%></h3>
-      <h4><%= crypto['year_created'] %> - <%= crypto['year_ended'] %> - <%= crypto['country'] %></h4>
-    </article>
+    <h3><%= crypto['name'] %> - <%= crypto['acronym']%></h3>
+    <h4><%= crypto['year_created'] %> - <%= crypto['year_ended'] %> - <%= crypto['country'] %></h4>
 
+    <p>Project type: <%= crypto['project_type']%></p>
+    <p>Info: <%= crypto['extra_info']%></p>
+    <div class="line-divisor"></div>
+    
     <% if admin_login? %>
-    <article class="article_buttons">
-      <a href="/cryptos/<%= crypto['id'] %>/edit" class="buttons">Edit this crypto</a>
+    
+      <a href="/cryptos/<%= crypto['id'] %>/edit" class="buttons" id="edit-button">Edit this crypto</a>
 
       <form onsubmit="return confirm('Are you sure you want to delete this entry?');" action="/cryptos/<%= crypto['id'] %>" method="POST">
         <input type="hidden" name="_method" value="delete" >
         <button class="form-button">Delete project</button>
       </form>
-    </article>
+      <div class="line-divisor"></div>
     <% end %>
-
-    <article class="article_body">
-      <p>Project type: <%= crypto['project_type']%></p>
-      <p>Info: <%= crypto['extra_info']%></p>
-    </article>
   <% end %>
+<% else %>
 
-  <% else %>
-
-    <% redirect '/' %>
+  <% redirect '/' %>
     
-  <% end %>
+<% end %>

@@ -7,11 +7,12 @@ This second project deploys an full stack CRUD app via Heroku.
 
 ### Key features
 
-- Secure login through password hashing (Bcrypt)
-- Parameterized database queries in PostgreSQL
-- Three levels of access: guest, user (by sign up registered) and admin (cold setup)
+- Full-stack CRUD app.
+- Secure login through password hashing (Bcrypt).
+- Parameterized database queries in PostgreSQL.
+- Three levels of access: guest, user (by sign up registered) and admin (cold setup).
 - MVC design pater, clean and replicable.
-- Profanity filter.
+- APIs: Coingecko for realtime BTC price and Purgomalum as profanity filter for posts.
 
 ## Project description
 
@@ -63,9 +64,19 @@ In this lusftul, greedy frenesi, the algorithm took his side and showed him a si
 - Front End: Javascript, CSS and HTML
 - APIs: Coingecko and Purgomalum.
 
-### Pending:
+## Difficulties & Pendings:
 
-User profile, access to their own messages and capacity to edit them or delete them.
+### Difficulties:
+
+- Retrieving a large string of data in a html input tag.
+
+### Pendings:
+
+- User profile
+- Access to their own messages and capacity to edit them or delete them.
+- Like and comment individual stories.
+- Sorting of SQL data
+- Forgot password functionality
 
 ### pages to revisit (so I can close them in Chrome)
 
