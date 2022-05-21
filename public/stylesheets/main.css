@@ -14,14 +14,38 @@ h1.main-title {
   margin: 15px 0;
   max-width: 650px;
 }
-/*
-form {
+
+button {
   display: flex;
+  flex-direction: row;
+  all: unset;
+  margin: 4px 2px;
+  width: fit-content;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+} */
+
+form {
+  display: inline-flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 20px;
+  width: fit-content;
 }
 
+.form-button {
+  display: inline;
+  margin: 5px;
+  padding: 2px;
+  width: fit-content;
+}
+
+/*
 .article-header {
   display: flex;
   flex-direction: column;
@@ -114,6 +138,25 @@ a {
   -ms-transform: translate(-50%, -50%);
 }
 
+.nav-logout-button {
+  display: inline;
+  width: fit-content;
+  margin: 0px;
+}
+
+.nav-logout {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+
+.nav-logout:hover {
+  background-color: #ddd;
+  color: black;
+}
 /* Navigation bar */
 /* Style the navbar */
 .topnav {

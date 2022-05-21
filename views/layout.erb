@@ -13,22 +13,23 @@
 <h1 class="main-title">The Dead Crypto Archives</h1>
 <div class="topnav" id="myTopnav">
   <a href="/" class="active">Home</a>
+  <a href="/">About</a>
   <a href="/cryptos/list_all">Cryptos</a>
   <a href="/stories/index">Stories</a>
 
-  <% if logged_in? %>
-    <form action="/sessions" method="POST">
-      <input type="hidden" name="_method" value="delete">
-      <button>Logout</button>
-    </form>
-
+ 
+  <a href="/sign_up">Sign up</a>
+  
+   <% if logged_in? %>
+      <form class="nav-logout" action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <button class="nav-logout-button">Logout</button>
+      </form>
   <% else %>
 
     <a href="/login">Log in</a>
   <% end %>  
 
-  <a href="/sign_up">Sign up</a>
-  <a href="/">About</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
 </div>
