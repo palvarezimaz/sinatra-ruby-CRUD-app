@@ -58,7 +58,7 @@ form {
 }
 
 .form-data {
-  width: 300px;
+  width: 400px;
   margin-left: 50px;
 }
 
@@ -100,6 +100,30 @@ a:hover {
     text-shadow: 0 0 20px #fff, 0 0 30px #416658, 0 0 40px #416658,
       0 0 50px #416658, 0 0 60px #416658, 0 0 70px #416658, 0 0 80px #416658;
   }
+}
+
+/*//// Information tooltip //*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 /*  Password confirmation validation*/
@@ -235,29 +259,8 @@ a:hover {
 #captcha {
   margin: 15px 0px;
 }
-
-/*//// Information tooltip //*/
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: max-content;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 5px;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-  left: 105%;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.g-recaptcha {
+  max-width: 85%;
 }
 
 /* Responsive NavBAR */
@@ -285,5 +288,17 @@ a:hover {
     float: none;
     display: block;
     text-align: left;
+  }
+  .form-data {
+    width: 85%;
+    margin-left: 0px;
+  }
+
+  .form-title {
+    margin-left: 0px;
+  }
+
+  .g-recaptcha {
+    width: 85%;
   }
 }

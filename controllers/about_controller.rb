@@ -35,14 +35,22 @@ post '/about/contact' do
   email = params['email']
   message = params['message']
 
-  if verify_recaptcha()
-
+  if logged_in?
     send_message(name, email, message)
 
     send_email(name, email, message)
 
     redirect '/about/contact?alert=Your message has been safely sent!'
   else
-    redirect '/about/contact?alert=Do not be a robot!'
+    if verify_recaptcha()
+
+      send_message(name, email, message)
+
+      send_email(name, email, message)
+
+      redirect '/about/contact?alert=Your message has been safely sent!'
+    else
+      redirect '/about/contact?alert=Do not be a robot!'
+    end
   end
 end
