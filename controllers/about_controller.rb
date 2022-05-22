@@ -35,7 +35,7 @@ post '/about/contact' do
   email = params['email']
   message = params['message']
 
-  if  verify_recaptcha()
+  if verify_recaptcha()
 
     send_message(name, email, message)
 
