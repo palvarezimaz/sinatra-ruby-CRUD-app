@@ -3,11 +3,13 @@ get '/login' do
   
   if alert == nil
     erb :'sessions/new', locals: {
-      message: ""
+      message: "",
+      captcha_key: ENV['RECAPTCHA_API_KEY']
     }
   else
     erb :'sessions/new', locals: {
-      message: alert
+      message: alert,
+      captcha_key: ENV['RECAPTCHA_API_KEY']
     }
   end
 end

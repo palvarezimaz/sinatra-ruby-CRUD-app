@@ -32,3 +32,7 @@ end
 def find_user_by_user_role(id)
   cryptonite("SELECT user_role FROM users WHERE id = $1", [id])[0]
 end
+
+def send_message(name, email, message)
+  cryptonite("INSERT INTO messages(name, email, message) VALUES($1, $2, $3)", [name, email, message])
+end

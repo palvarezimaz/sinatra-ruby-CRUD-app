@@ -3,19 +3,23 @@ get '/sign_up' do
 
   if alert == nil 
     erb :'users/new', locals: {
-    message: ""
+    message: "",
+    captcha_key: ENV['RECAPTCHA_API_KEY']
   }
   elsif alert.include?("username")
     erb :'users/new', locals: {
-      message: alert
+      message: alert,
+      captcha_key: ENV['RECAPTCHA_API_KEY']
     } 
   elsif alert.include?("email")
     erb :'users/new', locals: {
-      message: alert
+      message: alert,
+      captcha_key: ENV['RECAPTCHA_API_KEY']
     } 
   elsif alert.include?("Congratulations")
     erb :'users/new', locals: {
-      message: alert
+      message: alert,
+      captcha_key: ENV['RECAPTCHA_API_KEY']
     }
   end
 end

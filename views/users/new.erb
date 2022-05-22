@@ -1,6 +1,6 @@
 
 <h1 class="form-title">Sign up!</h1>
-<h3><%= message %></h3>
+<h3 class="form-title"><%= message %></h3>
 <form class="form-data" action="/users/create_user" method="POST">
   
   <label for="">*Name: </label>
@@ -14,9 +14,10 @@
 
   <label for="">*Confirm Password: </label>
   <input id="confirm_pass" type="password" name="confirm_password" minlength="6" placeholder="Confirm your password" onkeyup="validate_password()" required>
-  <span id="wrong_pass_alert"></span>
+  <%# <span id="wrong_pass_alert"></span> %>
 
+  <div class="g-recaptcha" data-sitekey="<%= captcha_key %>"></div>
 
-   <button id="create" class="form-button">Create user</button>
+  <button id="create" class="form-button">Create user</button>
  
 </form>
