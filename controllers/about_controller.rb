@@ -1,3 +1,6 @@
+require 'sendgrid-ruby'
+include SendGrid
+
 get '/about/index' do
   erb :'about/index'
 end
@@ -21,7 +24,10 @@ post '/about/contact' do
   email = params['email']
   message = params['message']
 
+
   send_message(name, email, message)
+
+  send_email(name, email, message)
 
   redirect '/about/contact?alert=Your message has been safely sent!'
 end

@@ -22,8 +22,9 @@ def current_user
   end
 end
 
-def verify_google_recptcha(secret_key,response)
-  status = `curl “https://www.google.com/recaptcha/api/siteverify? secret=#{ENV['RECAPTCHA_PUBLIC_KEY']}&response=#{response}”` 
+
+def verify_google_recaptcha(secret_key,response)
+  status = HTTParty.get("https://www.google.com/recaptcha/api/siteverify?secret_key=#{ENV['RECAPTCHA_PUBLIC_KEY']}&response=#{response}")
   hash = JSON.parse(status)
   hash[“success”] == true ? true : false
-  end
+end

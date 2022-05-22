@@ -1,10 +1,12 @@
+require 'pry'
+
 get '/login' do
   alert = params['alert']
   
   if alert == nil
     erb :'sessions/new', locals: {
       message: "",
-      captcha_key: ENV['RECAPTCHA_API_KEY']
+      captcha_key: ENV['RECAPTCHA_PUBLIC_KEY']
     }
   else
     erb :'sessions/new', locals: {
@@ -19,15 +21,18 @@ post '/sessions' do
   password = params['password']
 
   user = find_user_by_email(email)
+  
+  result = verify_google_recaptcha(secret_key, response)
 
-  if user && BCrypt::Password.new(user['password_digest']) == password
-    session['user_id'] = user['id']
-    
-    status = verify_google_recptcha(SECRET_KEY,params[‘g-recaptcha-response’])
-    
+  binding.pry
+  if user && BCrypt::Password.new(user['password_digest']) == password && result == true
+    session['user_id'] = user['id'] 
+
     redirect '/'
   else
+
     redirect '/login?alert=Login unsuccessful, please try again'
+
   end
 end
 
