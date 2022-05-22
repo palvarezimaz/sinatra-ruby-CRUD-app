@@ -63,6 +63,7 @@ In this lusftul, greedy frenesi, the algorithm took his side and showed him a si
 - Back End: Ruby and PostgreSQL
 - Front End: Javascript, CSS and HTML
 - APIs: Coingecko and Purgomalum.
+- reCaptcha and SendGrid
 
 ## Difficulties & Pendings:
 
@@ -77,31 +78,4 @@ In this lusftul, greedy frenesi, the algorithm took his side and showed him a si
 - Like and comment individual stories.
 - Sorting of SQL data
 - Forgot password functionality
-
-### pages to revisit (so I can close them in Chrome)
-
-Important:
-Password check
-https://haveibeenpwned.com/API/v3
-
-language
-https://dovetailapp.com/blog/sentiment-analysis/
-https://techwithsach.com/sentiment-analysis-using-google-cloud-natural-language-api/
-https://www.upbuild.io/blog/google-cloud-natural-language-api/
-https://www.geeksforgeeks.org/translation-and-natural-language-processing-using-google-cloud/
-https://cloud.google.com/natural-language/docs/reference/libraries
-
-CSS
-https://www.w3schools.com/howto/howto_js_topnav.asp
-
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_overlay
-https://www.w3schools.com/howto/howto_css_overlay.asp
-https://blog.stackfindover.com/html-popup-box/
-
-email verif
-https://mailtrap.docs.apiary.io/#
-https://www.guerrillamail.com/GuerrillaMailAPI.html
-
-stupid ones
-https://icanhazdadjoke.com/api
+- Implementation of "haveibeenpwned" and email verification via mailtrap

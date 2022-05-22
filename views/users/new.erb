@@ -6,7 +6,7 @@
   <label for="">*Name: </label>
   <input type="text" name="name" placeholder="Enter your user name" required>
 
-  <label for="">*Email: </label>
+  <label for=""><div class="tooltip">*Email: <span class="tooltiptext"> Email must be written in small caps</span></div></label>
   <input type="text" name="email" placeholder="Enter your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
   <label for="">*Password: </label>
@@ -14,10 +14,9 @@
 
   <label for="">*Confirm Password: </label>
   <input id="confirm_pass" type="password" name="confirm_password" minlength="6" placeholder="Confirm your password" onkeyup="validate_password()" required>
-  <%# <span id="wrong_pass_alert"></span> %>
-
-  <div class="g-recaptcha" data-sitekey="<%= captcha_key %>"></div>
+  <span id="wrong_pass_alert"></span>
 
   <button id="create" class="form-button">Create user</button>
+  <div class="g-recaptcha" id="captcha" data-sitekey="<%= captcha_key %>"></div>
  
 </form>

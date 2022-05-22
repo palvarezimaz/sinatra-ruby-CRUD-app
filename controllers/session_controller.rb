@@ -1,7 +1,15 @@
 require 'pry'
+include Recaptcha::Adapters::ViewMethods
+include Recaptcha::Adapters::ControllerMethods
+
+Recaptcha.configure do |config|
+  config.site_key  = ENV['RECAPTCHA_PUBLIC_KEY']
+  config.secret_key = ENV['RECAPTCHA_PRIVATE_KEY']
+end
 
 get '/login' do
   alert = params['alert']
+  recaptcha_tags()
   
   if alert == nil
     erb :'sessions/new', locals: {
@@ -21,18 +29,14 @@ post '/sessions' do
   password = params['password']
 
   user = find_user_by_email(email)
-  
-  result = verify_google_recaptcha(secret_key, response)
 
-  binding.pry
-  if user && BCrypt::Password.new(user['password_digest']) == password && result == true
+  if verify_recaptcha()
+    user && BCrypt::Password.new(user['password_digest']) == password 
+
     session['user_id'] = user['id'] 
-
     redirect '/'
   else
-
     redirect '/login?alert=Login unsuccessful, please try again'
-
   end
 end
 

@@ -5,6 +5,8 @@ require 'bcrypt'
 require 'httparty'
 require 'recaptcha'
 require 'sendgrid-ruby'
+require 'net/http'
+require 'json'
 
 enable :sessions
 
