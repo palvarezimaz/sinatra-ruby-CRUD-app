@@ -7,6 +7,7 @@ GEM
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
+    json (2.6.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -30,6 +31,8 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    recaptcha (5.10.0)
+      json
     rerun (0.13.1)
       listen (~> 3.0)
     ruby2_keywords (0.0.5)
@@ -53,6 +56,7 @@ DEPENDENCIES
   pg
   pry
   puma
+  recaptcha
   rerun
   sinatra
   sinatra_generator

@@ -9,7 +9,7 @@ get '/login' do
   else
     erb :'sessions/new', locals: {
       message: alert,
-      captcha_key: ENV['RECAPTCHA_API_KEY']
+      captcha_key: ENV['RECAPTCHA_PUBLIC_KEY']
     }
   end
 end
@@ -22,6 +22,8 @@ post '/sessions' do
 
   if user && BCrypt::Password.new(user['password_digest']) == password
     session['user_id'] = user['id']
+    
+    status = verify_google_recptcha(SECRET_KEY,params[‘g-recaptcha-response’])
     
     redirect '/'
   else

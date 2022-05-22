@@ -21,3 +21,9 @@ def current_user
     nil
   end
 end
+
+def verify_google_recptcha(secret_key,response)
+  status = `curl “https://www.google.com/recaptcha/api/siteverify? secret=#{ENV['RECAPTCHA_PUBLIC_KEY']}&response=#{response}”` 
+  hash = JSON.parse(status)
+  hash[“success”] == true ? true : false
+  end
