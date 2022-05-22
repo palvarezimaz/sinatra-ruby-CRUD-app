@@ -3,6 +3,7 @@ require 'sinatra'
 require 'pry'
 require 'bcrypt'
 require 'httparty'
+require 'recaptcha'
 
 enable :sessions
 
