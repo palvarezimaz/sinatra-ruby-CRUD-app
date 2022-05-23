@@ -41,9 +41,9 @@ post '/users/create_user' do
   
   if verify_recaptcha()
     if find_user_by_name(name).to_a.count > 0
-      redirect '/sign_up?alert=Ups, it seems that your username is already registered! Please click in -Sign up!- and start again.'
+      redirect '/sign_up?alert=Ups, it seems that your username is already registered! Please start again.'
     elsif find_user_by_email(email).to_a.count > 0
-      redirect '/sign_up?alert=Ups, your email has been taken already! Please click in -Sign up!- and start again.'
+      redirect '/sign_up?alert=Ups, your email has been taken already! Please start again.'
     else
       user = create_user(name, email, password, user_role) 
       

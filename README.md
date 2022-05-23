@@ -9,9 +9,11 @@ This second project deploys an full stack CRUD app via Heroku.
 
 - Full-stack CRUD app.
 - Secure login through password hashing (Bcrypt).
+- ReCaptcha and password confirmation
 - Parameterized database queries in PostgreSQL.
 - Three levels of access: guest, user (by sign up registered) and admin (cold setup).
-- MVC design pater, clean and replicable.
+- MVC design pattern, clean, replicable and responsive.
+- Contact us form with secure data transfer via SendGrid
 - APIs: Coingecko for realtime BTC price and Purgomalum as profanity filter for posts.
 
 ## Project description
