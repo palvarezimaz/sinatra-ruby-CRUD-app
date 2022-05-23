@@ -67,15 +67,20 @@ In this lusftul, greedy frenesi, the algorithm took his side and showed him a si
 - APIs: Coingecko and Purgomalum.
 - reCaptcha and SendGrid
 
-## Difficulties & Pendings:
+## Conclusions & Pendings:
 
-### Difficulties:
+### Conclusions:
 
-- Retrieving a large string of data in a html input tag.
+I had considerable time constrains for this project, and taking into account that there were a number of technologies I haven't used before, I knew that I had to keep the idea simple to focus on delivering a MVP on the due date. With an unusual lack of good ideas, I rehused as wireframe a little and very basic project I started a few weeks before, just to practice the building of a Sinatra CRUD app. After some polishing, I started with the login logic and with that the challenges of setting up a full-stack app for the first time, in no time. While the app itself is very simple, it has many little features that I am proud to have pulled through. As such, it serves me as a starting point for further developments, under the DRS principle. The main difficulties were adapting to different styles of documentation and working out a solution fit for the project.
+
+#### Specific things I learned:
+
+- How to operate with SQL tables, retrieving different results and returning values for instant consideration of the site, specially in the login fase.
+- Everything is in Google as long as you already know what you are looking for.
 
 ### Pendings:
 
-- User profile
+- User profiles
 - Access to their own messages and capacity to edit them or delete them.
 - Like and comment individual stories.
 - Sorting of SQL data
