@@ -31,12 +31,14 @@ post '/sessions' do
   user = find_user_by_email(email)
 
   if verify_recaptcha()
-    user && BCrypt::Password.new(user['password_digest']) == password 
-
+    if user && BCrypt::Password.new(user['password_digest']) == password 
     session['user_id'] = user['id'] 
     redirect '/'
-  else
-    redirect '/login?alert=Login unsuccessful, please try again'
+    else
+      redirect '/login?alert=Login unsuccessful, please try again'
+    end
+  else  
+    redirect '/sign_up?=Do not be a robot!'
   end
 end
 
