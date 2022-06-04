@@ -22,6 +22,70 @@ Cryptocurrencies have seen an exponential growth in the last few years, reaching
 
 In lieu of this, it makes sense to gather these failing projects in an Archive, as well as giving the oportunity for investors and cryptocurrency users to share theirs stories, as a testimony of a these tumultuous events that will shape, for better or worse, the financial future of humanity.
 
+## How to build - Instructions (MAC OS)
+
+This app was build using Sinatra as framework and Ruby as a BackEnd programming language and postgreSQL as database.
+
+0. Install postgreSQL - Type:
+
+- brew update
+- brew install postgresql
+- brew services start postgresql
+- psql postgres
+- CREATE ROLE insert_username;
+- ALTER ROLE insert_username CREATEDB;
+- CREATE DATABASE insert_username;
+- \q
+
+1. Ruby and Sinatra:
+   a. It first requires to install rvm and then these two gems:
+
+- sinatra
+- sinatra_generator
+
+Then, run: "sinatra new app_name -va" to produce the sinatra application within the folder where you want to store the project
+
+Install "gem install bundler"
+
+Overall, it uses the following Gems (you should have a Gemfile):
+
+- sinatra
+- sinatra_generator
+- pg
+- bcrypt
+- httparty
+- pry
+- rerun
+- puma
+- recaptcha
+- sendgrid-ruby
+
+Once the Gems are loaded on the Gemfile, run 'bundle' in the terminal within the appropiate folder to download and lock the gems
+
+- Note: I am using erb files. If you are using VSCode, add the following in the setting:
+  "emmet.includeLanguages": {
+  "erb": "html"
+  }
+
+To run the server locally: run main.rb
+
+3. To deploy to Heroku:
+
+- Install Heroku (for MAC): brew install heroku
+- Create a Heroku account
+- PG.connect line should be changed to:
+  "PG.connect(ENV['DATABASE_URL'] || {dbname: 'database_name'})"
+- REMEMBER TO HAVE ENVIRONMENT VARIABLES IN YOUR CODE
+- After installing, run in the terminal: heroku login
+- Create heroku app: heroku create
+- Deploy app: git push heroku master
+
+4. Database config
+
+- Deploy your database (remember to change "local_database_name" to your actual database name e.g. "goodfoodhunting"): heroku pg:push local_database_name DATABASE_URL
+
+- If you get an error saying you don't have a database on production, run: heroku addons:create heroku-postgresql:hobby-dev
+
 ## User stories
 
 Jack X., a middle age tradie from inner New South Wales, got an exciting email: "Become millionare in only 2 months". He went to his daughter's shiny MacBook Pro and typed in Google: "OneCoin"... 6 million results, thousands of testimonies and photos filled with paradisiac beaches and Lamborghinis. Jack got excited, thinking: "No more sausage rolls for brunch!". He even put an ad for selling his truck. He was ready to invest all his self-managed super.
@@ -57,6 +121,10 @@ In this lusftul, greedy frenesi, the algorithm took his side and showed him a si
 ### Step 4 - Make it nice
 
 1. CSS
+
+### SQL Database relationship diagram
+
+![Database relationship diagram](/public/images/diagram.png)
 
 ## Tech used
 
