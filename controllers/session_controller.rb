@@ -24,6 +24,23 @@ get '/login' do
   end
 end
 
+get '/demo-login' do
+  alert = params['alert']
+  recaptcha_tags()
+  
+  if alert == nil
+    erb :'sessions/new-demo', locals: {
+      message: "",
+      captcha_key: ENV['RECAPTCHA_PUBLIC_KEY']
+    }
+  else
+    erb :'sessions/new-demo', locals: {
+      message: alert,
+      captcha_key: ENV['RECAPTCHA_PUBLIC_KEY']
+    }
+  end
+end
+
 post '/sessions' do
   email = params['email']
   password = params['password']

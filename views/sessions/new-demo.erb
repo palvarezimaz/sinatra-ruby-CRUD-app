@@ -1,0 +1,14 @@
+<h1 class="form-title">Log in</h1>
+
+<form class="form-data" action="/sessions" method="POST">
+  <label for="">Email</label>
+  <input type="text" name="email" value="tester@test.com">
+
+  <label for="">Password</label>
+  <input type="password" name="password" value="Tester1">
+
+  <div class="g-recaptcha" data-sitekey="<%= captcha_key %>"></div>
+
+  <button class="form-button">Log me in</button>
+  <h3><%= message %></h3>
+</form>

@@ -154,3 +154,9 @@ I had considerable time constrains for this project, and taking into account tha
 - Sorting of SQL data
 - Forgot password functionality
 - Implementation of "haveibeenpwned" and email verification via mailtrap
+
+## Credits and Licenses
+
+A big shout out to all those who reply to the ignorant and sacrifice their time in the pursue of knowledge, for I have considerably fed from their posts.
+
+This app was created for educational purposes as Project 2 for the GA Software Engineer Immersive course, cohort #53 (2022), under the <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.

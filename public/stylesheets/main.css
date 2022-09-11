@@ -260,6 +260,9 @@ a:hover {
   max-width: 85%;
 }
 
+.demo {
+  margin-top: 10px;
+}
 /* Responsive NavBAR */
 @media screen and (max-width: 600px) {
   body {
