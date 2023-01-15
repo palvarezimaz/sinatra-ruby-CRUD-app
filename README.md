@@ -5,6 +5,8 @@
 This second project deploys an full stack CRUD app via Heroku.
 [To acces it, click here](https://deadcryptos.herokuapp.com/). The Dead Crypro Archives aims to be a repository of terminated, abandoned or failed Crypto-currency projects. I also has a space for users to share their stories related to these projects. With a early 2000's flair, it's strong on security and safety.
 
+** Try the Demo account **
+
 ### Key features
 
 - Full-stack CRUD app.

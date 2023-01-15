@@ -1,13 +1,13 @@
 get '/cryptos' do
   btc_price = btc_price()
-  kanye_west = kanye_west()
-  
+  apiquinas = apiquinas()
+
   crypto_list = all_crypto()
 
   erb :'cryptos/index', locals: {
     crypto_list: crypto_list,
-    btc_price: btc_price, 
-    kanye_west: kanye_west
+    btc_price: btc_price,
+    apiquinas: apiquinas
   }
 end
 
@@ -40,7 +40,7 @@ end
 
 get '/cryptos/:id/edit' do
   id = params['id']
-  
+
   crypto = edit_crypto(id)
 
   erb :'cryptos/edit', locals: {
