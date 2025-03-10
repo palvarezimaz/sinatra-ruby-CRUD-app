@@ -2,8 +2,7 @@
 
 ## Summary
 
-This second project deploys an full stack CRUD app via Heroku.
-[To acces it, click here](https://deadcryptos.herokuapp.com/). The Dead Crypro Archives aims to be a repository of terminated, abandoned or failed Crypto-currency projects. I also has a space for users to share their stories related to these projects. With a early 2000's flair, it's strong on security and safety.
+The Dead Crypro Archives aims to be a repository of terminated, abandoned or failed Crypto-currency projects. I also has a space for users to share their stories related to these projects. With a early 2000's flair, it's strong on security and safety.
 
 ** Try the Demo account **
 
@@ -17,6 +16,15 @@ This second project deploys an full stack CRUD app via Heroku.
 - MVC design pattern, clean, replicable and responsive.
 - Contact us form with secure data transfer via SendGrid
 - APIs: Coingecko for realtime BTC price and Purgomalum as profanity filter for posts.
+
+## Images
+![image](https://github.com/user-attachments/assets/d30ae1d8-0b41-4d61-b5f3-40beef063c09)
+![image](https://github.com/user-attachments/assets/58907ce6-d9b2-4ec3-bebf-328a61c0c5b3)
+![image](https://github.com/user-attachments/assets/66273c17-73fe-47a4-b84d-2ba1c2f521b0)
+![image](https://github.com/user-attachments/assets/64fdbbfd-f161-494d-af39-025af80edf14)
+![image](https://github.com/user-attachments/assets/1c5ea4c4-30e3-4de7-aaf1-9fc28bf55a18)
+![image](https://github.com/user-attachments/assets/3888a3d9-e391-47e1-959e-5ddc5de2158e)
+
 
 ## Project description
 
